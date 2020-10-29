@@ -11,30 +11,30 @@ class _MyBottomBarState extends State<MyBottomBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
-      backgroundColor: Color(0xff1d2d50),
+      backgroundColor: Color(0xff000000),
       selectedIconTheme: IconThemeData(
         size: 25,
-        color: Colors.white,
+        color: Color(0xff57BE70),
       ),
       unselectedIconTheme: IconThemeData(
-        color: Colors.white60,
+        color: Colors.white,
       ),
       items: [
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.scanner_outlined,
+            Icons.scanner,
           ),
           title: Text(''),
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.list_alt_outlined,
+            Icons.list,
           ),
           title: Text(''),
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.account_box_outlined,
+            Icons.account_balance_wallet,
           ),
           title: Text(''),
         ),
