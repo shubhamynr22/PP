@@ -10,27 +10,21 @@ class _CommonPage extends State<CommonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xff3e4461),
+        color: Color(0xff000000),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsetsDirectional.fromSTEB(20, 35, 0, 0),
-                  height: 45,
-                  width: 45,
-                  child: Image(image: AssetImage('images/FINAL.png')),
-                ),
-                Container(
-                  margin: EdgeInsetsDirectional.fromSTEB(5, 35, 0, 0),
+                  margin: EdgeInsetsDirectional.fromSTEB(20, 40, 0, 0),
                   child: Text(
                     'POCKET PURSUIT',
                     style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff57BE70),
                       fontSize: 20,
-                      fontFamily: 'Montserrat',
+                      fontFamily: 'Helvetica',
                     ),
                   ),
                 ),
@@ -41,10 +35,10 @@ class _CommonPage extends State<CommonPage> {
               child: Text(
                 'ITEMS',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color(0xff57BE70),
                   fontSize: 15,
                   fontWeight: FontWeight.w300,
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'Helvetica',
                 ),
               ),
             ),
@@ -105,10 +99,10 @@ class _CommonPage extends State<CommonPage> {
               child: Text(
                 'PLACES',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color(0xff57BE70),
                   fontSize: 15,
                   fontWeight: FontWeight.w300,
-                  fontFamily: 'Monserrat',
+                  fontFamily: 'Helvetica',
                 ),
               ),
             ),
