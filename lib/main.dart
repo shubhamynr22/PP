@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NotificationSettings(),
+      body: CommonPage(),
       backgroundColor: Colors.black,
       bottomNavigationBar: MyBottomBar(),
     );

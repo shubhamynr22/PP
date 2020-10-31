@@ -10,7 +10,7 @@ class _CommonPage extends State<CommonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xff000000),
+        color: Color(0xfff5f5f5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -22,7 +22,7 @@ class _CommonPage extends State<CommonPage> {
                     'POCKET PURSUIT',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff57BE70),
+                      color: Colors.black,
                       fontSize: 20,
                       fontFamily: 'Helvetica',
                     ),
@@ -35,7 +35,7 @@ class _CommonPage extends State<CommonPage> {
               child: Text(
                 'ITEMS',
                 style: TextStyle(
-                  color: Color(0xff57BE70),
+                  color: Colors.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w300,
                   fontFamily: 'Helvetica',
@@ -58,7 +58,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -67,7 +67,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -76,7 +76,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -85,7 +85,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -99,7 +99,7 @@ class _CommonPage extends State<CommonPage> {
               child: Text(
                 'PLACES',
                 style: TextStyle(
-                  color: Color(0xff57BE70),
+                  color: Colors.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w300,
                   fontFamily: 'Helvetica',
@@ -122,7 +122,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -131,7 +131,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                         child: Container(),
@@ -141,7 +141,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -150,7 +150,7 @@ class _CommonPage extends State<CommonPage> {
                         margin: EdgeInsets.only(right: 15),
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
