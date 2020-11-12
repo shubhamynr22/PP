@@ -19,6 +19,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
       unselectedIconTheme: IconThemeData(
         color: Colors.white,
       ),
+      iconSize: 20,
       items: [
         BottomNavigationBarItem(
           icon: Icon(
@@ -34,7 +35,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.account_balance_wallet,
+            Icons.account_box_outlined,
           ),
           title: Text(''),
         ),
