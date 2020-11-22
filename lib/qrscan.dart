@@ -7,14 +7,10 @@ class ScanPage extends StatefulWidget {
 }
 
 class _ScanPageState extends State<ScanPage> {
-  String qrCodeResult = "Not Yet Scanned";
+  String qrCodeResult = "Scan it";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Scanner"),
-        centerTitle: true,
-      ),
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -22,7 +18,7 @@ class _ScanPageState extends State<ScanPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              "Result",
+              "QR Generator to be added",
               style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -39,8 +35,7 @@ class _ScanPageState extends State<ScanPage> {
             FlatButton(
               padding: EdgeInsets.all(15.0),
               onPressed: () async {
-                String codeSanner =
-                    await BarcodeScanner.scan(); //barcode scnner
+                String codeSanner = await BarcodeScanner.scan();
                 setState(() {
                   qrCodeResult = codeSanner;
                 });
@@ -48,10 +43,10 @@ class _ScanPageState extends State<ScanPage> {
               child: Text(
                 "Open Scanner",
                 style:
-                    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.blue, width: 3.0),
+                  side: BorderSide(color: Color(0xff57BE70), width: 3.0),
                   borderRadius: BorderRadius.circular(20.0)),
             )
           ],
