@@ -11,36 +11,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(220, 220, 220, 1),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(10, 40, 0, 50),
-            child: Text(
-              'QR Code',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 28,
-                fontWeight: FontWeight.w900,
-                fontFamily: 'Helvetica',
-              ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Image(
-                    image: NetworkImage(
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png')),
-                flatButton("Scan QR CODE", ScanPage()),
-              ],
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        title: Text("Homepage"),
+        centerTitle: true,
+      ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Image(
+                image: NetworkImage(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png')),
+            flatButton("Scan QR CODE", ScanPage()),
+          ],
+        ),
       ),
     );
   }
@@ -54,10 +42,10 @@ class _HomePageState extends State<HomePage> {
       },
       child: Text(
         text,
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
       ),
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: Color(0xff57BE70), width: 3.0),
+          side: BorderSide(color: Colors.blue, width: 3.0),
           borderRadius: BorderRadius.circular(20.0)),
     );
   }

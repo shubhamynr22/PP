@@ -3,6 +3,7 @@ import './bottomnavigationbar.dart';
 import './homepage.dart';
 import './settings.dart';
 import './notificationsettings.dart';
+import 'homepage.dart';
 import 'settings.dart';
 
 void main() => runApp(MaterialApp(
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Settings(),
+      body: CommonPage(),
       backgroundColor: Colors.black,
       bottomNavigationBar: MyBottomBar(),
     );

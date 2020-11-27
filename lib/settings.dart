@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Settings extends StatelessWidget {
-  Size _size;
   @override
   Widget build(BuildContext context) {
-    _size = MediaQuery.of(context).size;
     return Container(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
