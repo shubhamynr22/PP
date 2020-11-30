@@ -1,27 +1,15 @@
+import 'package:PP/screens/login/signin2.dart';
+
 import 'package:flutter/material.dart';
-import './bottomnavigationbar.dart';
-import './homepage.dart';
-import './settings.dart';
-import './notificationsettings.dart';
-import 'homepage.dart';
-import 'settings.dart';
 
-void main() => runApp(MaterialApp(
-      home: MyApp(),
-    ));
+void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CommonPage(),
-      backgroundColor: Colors.black,
-      bottomNavigationBar: MyBottomBar(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SignIn(),
     );
   }
 }

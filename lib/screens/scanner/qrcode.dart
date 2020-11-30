@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:PP/qrscan.dart';
+import 'package:PP/screens/scanner/qrscan.dart';
 
 class HomePage extends StatefulWidget {
   @override
