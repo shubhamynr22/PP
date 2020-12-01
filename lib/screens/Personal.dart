@@ -4,11 +4,11 @@ const PRIMARY = "primary";
 const WHITE = "white";
 const BLACK = "black";
 
-const Map<String, Color> myColors = {
-  PRIMARY: Color.fromRGBO(220, 220, 220, 1),
-  //WHITE: Colors.white,
-  WHITE: Color.fromRGBO(0, 0, 0, 1),
-  BLACK: Colors.black,
+Map<String, Color> myColors = {
+  PRIMARY: Colors.white,
+  WHITE: Colors.blueGrey[700],
+  // WHITE: Color.fromRGBO(0, 0, 0, 1),
+  BLACK: Colors.blueGrey.shade900,
 };
 
 class Personal extends StatefulWidget {
@@ -20,7 +20,7 @@ class _PersonalState extends State<Personal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: _myAppBar(),
+      appBar: _myAppBar(),
       backgroundColor: myColors[PRIMARY],
       body: _Body(),
     );
@@ -131,7 +131,6 @@ class __BodyState extends State<_Body> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
-                margin: EdgeInsets.only(left: 10.0, right: 20.0, top: 10.0),
                 height: 120.0,
                 width: 100.0,
                 //child: Text('Personal'),

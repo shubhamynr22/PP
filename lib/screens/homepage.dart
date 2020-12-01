@@ -1,3 +1,5 @@
+import 'package:PP/services/auth.dart';
+import 'package:PP/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 class CommonPage extends StatefulWidget {
@@ -6,14 +8,22 @@ class CommonPage extends StatefulWidget {
 }
 
 class _CommonPage extends State<CommonPage> {
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MyBottomBar(),
       body: Container(
         color: Color(0xfff5f5f5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            FlatButton(
+              onPressed: () {
+                _authService.logout();
+              },
+              child: Text("logout"),
+            ),
             Row(
               children: <Widget>[
                 Container(

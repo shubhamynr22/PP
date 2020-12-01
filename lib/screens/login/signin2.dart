@@ -1,3 +1,4 @@
+import 'package:PP/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -6,6 +7,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  AuthService _authService = AuthService();
+  TextEditingController _email = TextEditingController();
+  TextEditingController pass = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -31,6 +35,7 @@ class _SignInState extends State<SignIn> {
                 child: Column(
                   children: <Widget>[
                     TextField(
+                      controller: _email,
                       decoration: InputDecoration(
                         labelText: 'EMAIL',
                         labelStyle: TextStyle(
@@ -46,6 +51,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 20.0),
                     TextField(
+                      controller: pass,
                       decoration: InputDecoration(
                         labelText: 'PASSWORD',
                         labelStyle: TextStyle(
@@ -84,7 +90,10 @@ class _SignInState extends State<SignIn> {
                         color: Colors.blueGrey,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () async {
+                            await _authService.signInWithEmail(
+                                email: _email.text, password: pass.text);
+                          },
                           child: Center(
                             child: Text(
                               'LOGIN',
