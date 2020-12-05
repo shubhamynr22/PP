@@ -1,6 +1,15 @@
+import 'package:PP/screens/settings/account.dart';
+import 'package:PP/screens/settings/notificationsettings.dart';
+import 'package:PP/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
+  @override
+  _SettingsState createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +26,9 @@ class Settings extends StatelessWidget {
           ),
           Container(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: Icon(Icons.arrow_back),
             ),
           ),
@@ -36,27 +47,12 @@ class Settings extends StatelessWidget {
           ),
           FlatButton(
             padding: EdgeInsets.all(0),
-            onPressed: () {},
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                  child: Text(
-                    'Account',
-                    style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Helvetica',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          FlatButton(
-            padding: EdgeInsets.all(0),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => NotificationSettings()));
+            },
             child: Row(
               children: [
                 Container(
@@ -103,6 +99,28 @@ class Settings extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
                   child: Text(
                     'About the App',
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Helvetica',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          FlatButton(
+            padding: EdgeInsets.all(0),
+            onPressed: () {
+              _authService.logout();
+            },
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                  child: Text(
+                    'Logout',
                     style: TextStyle(
                       color: Colors.blueGrey,
                       fontSize: 20,

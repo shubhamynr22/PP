@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 
-class NotificationSettings extends StatefulWidget {
+class Account extends StatefulWidget {
   @override
-  _NotificationSettingsState createState() => _NotificationSettingsState();
+  _AccountState createState() => _AccountState();
 }
 
-class _NotificationSettingsState extends State<NotificationSettings> {
+class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           SizedBox(
             height: 20,
           ),
           IconButton(
-              icon: Icon(
-                Icons.arrow_back,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           Container(
-            padding: EdgeInsets.fromLTRB(15, 15, 0, 50),
+            padding: EdgeInsets.fromLTRB(15, 0, 0, 40),
             child: Text(
-              'Notifications',
+              'Account',
               style: TextStyle(
+                decoration: TextDecoration.none,
                 color: Colors.blueGrey,
                 fontSize: 28,
                 fontWeight: FontWeight.w900,

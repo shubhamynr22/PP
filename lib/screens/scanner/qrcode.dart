@@ -2,30 +2,43 @@ import 'package:flutter/material.dart';
 
 import 'package:PP/screens/scanner/qrscan.dart';
 
-class HomePage extends StatefulWidget {
+class ScanHome extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _ScanHomeState createState() => _ScanHomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ScanHomeState extends State<ScanHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Homepage"),
-        centerTitle: true,
-      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image(
-                image: NetworkImage(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png')),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(15, 0, 0, 40),
+              child: Text(
+                'Scanner',
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blueGrey[900],
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Helvetica',
+                ),
+              ),
+            ),
+            Center(
+              child: Image(
+                  height: 300,
+                  image: NetworkImage(
+                      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png')),
+            ),
             flatButton("Scan QR CODE", ScanPage()),
           ],
         ),
@@ -34,19 +47,21 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget flatButton(String text, Widget widget) {
-    return FlatButton(
-      padding: EdgeInsets.all(15.0),
-      onPressed: () async {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => widget));
-      },
-      child: Text(
-        text,
-        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+    return Center(
+      child: FlatButton(
+        padding: EdgeInsets.all(15.0),
+        onPressed: () {
+          Navigator.push(
+              context, new MaterialPageRoute(builder: (context) => widget));
+        },
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+        ),
+        shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.blueGrey, width: 3.0),
+            borderRadius: BorderRadius.circular(20.0)),
       ),
-      shape: RoundedRectangleBorder(
-          side: BorderSide(color: Colors.blue, width: 3.0),
-          borderRadius: BorderRadius.circular(20.0)),
     );
   }
 }

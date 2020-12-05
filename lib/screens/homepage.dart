@@ -1,6 +1,7 @@
+import 'package:PP/screens/settings/settings.dart';
 import 'package:PP/services/auth.dart';
-import 'package:PP/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class CommonPage extends StatefulWidget {
   @override
@@ -8,36 +9,45 @@ class CommonPage extends StatefulWidget {
 }
 
 class _CommonPage extends State<CommonPage> {
-  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyBottomBar(),
       body: Container(
-        color: Color(0xfff5f5f5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            FlatButton(
-              onPressed: () {
-                _authService.logout();
-              },
-              child: Text("logout"),
+            SizedBox(
+              height: 40,
             ),
             Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsetsDirectional.fromSTEB(20, 40, 0, 0),
+                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
                   child: Text(
-                    'POCKET PURSUIT',
+                    'Pocket Pursuit',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 20,
+                      decoration: TextDecoration.none,
+                      color: Colors.blueGrey[900],
+                      fontSize: 28,
+                      fontWeight: FontWeight.w900,
                       fontFamily: 'Helvetica',
                     ),
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(140, 0, 0, 0),
+                  child: IconButton(
+                      icon: Icon(
+                        Icons.settings,
+                        color: Colors.blueGrey[800],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => Settings()));
+                      }),
+                )
               ],
             ),
             Container(
@@ -63,41 +73,49 @@ class _CommonPage extends State<CommonPage> {
                   alignment: Alignment.topCenter,
                   child: Row(
                     children: <Widget>[
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
                     ],
                   ),
@@ -127,42 +145,50 @@ class _CommonPage extends State<CommonPage> {
                   alignment: Alignment.topCenter,
                   child: Row(
                     children: <Widget>[
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
-                        child: Container(),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                          child: Container(),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(right: 15),
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                      InkWell(
+                        child: Container(
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.blueGrey[700],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
                       ),
                     ],
                   ),
