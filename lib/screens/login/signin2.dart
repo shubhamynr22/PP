@@ -1,3 +1,4 @@
+import 'package:PP/screens/login/signup.dart';
 import 'package:PP/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -146,7 +147,12 @@ class _SignInState extends State<SignIn> {
                 ),
                 SizedBox(width: 5.0),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => SignupPage()));
+                  },
                   child: Text(
                     'Register',
                     style: TextStyle(

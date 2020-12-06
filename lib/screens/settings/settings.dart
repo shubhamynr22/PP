@@ -114,6 +114,7 @@ class _SettingsState extends State<Settings> {
             padding: EdgeInsets.all(0),
             onPressed: () {
               _authService.logout();
+              Navigator.pop(context);
             },
             child: Row(
               children: [
