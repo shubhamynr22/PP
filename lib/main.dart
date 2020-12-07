@@ -2,6 +2,7 @@ import 'package:PP/screens/Personal/Personal.dart';
 import 'package:PP/screens/homepage.dart';
 import 'package:PP/screens/login/signin2.dart';
 import 'package:PP/screens/login/signup.dart';
+import 'package:PP/screens/new.dart';
 import 'package:PP/screens/settings/settings.dart';
 import 'package:PP/services/auth.dart';
 import 'package:PP/widgets/wrapper.dart';

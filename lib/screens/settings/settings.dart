@@ -1,5 +1,5 @@
-import 'package:PP/screens/settings/account.dart';
 import 'package:PP/screens/settings/notificationsettings.dart';
+import 'package:PP/screens/settings/report.dart';
 import 'package:PP/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +72,12 @@ class _SettingsState extends State<Settings> {
           ),
           FlatButton(
             padding: EdgeInsets.all(0),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => Reportaproblem()));
+            },
             child: Row(
               children: [
                 Container(
