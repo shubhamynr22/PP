@@ -20,38 +20,31 @@ class _CommonPage extends State<CommonPage> {
   void getPostsData() {
     List<dynamic> responseList = FOOD_DATA;
     List<Widget> listItems = [];
+    print(responseList);
     responseList.forEach((post) {
       listItems.add(Container(
-          margin: EdgeInsets.all(15),
-          height: 10,
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          height: 50,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
               boxShadow: [
-                BoxShadow(color: Colors.black.withAlpha(80), blurRadius: 10.0),
+                BoxShadow(color: Colors.black.withAlpha(40), blurRadius: 10.0),
               ]),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
-            child: Row(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      post["name"],
-                      style: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Text(
-                      post["brand"],
-                      style: const TextStyle(fontSize: 13, color: Colors.grey),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                post["name"],
+                style:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                post["brand"],
+                style: const TextStyle(fontSize: 13, color: Colors.grey),
+              ),
+            ],
           )));
     });
     setState(() {
@@ -77,11 +70,10 @@ class _CommonPage extends State<CommonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 40,
+              height: 10,
             ),
             Row(
               children: <Widget>[
@@ -91,7 +83,7 @@ class _CommonPage extends State<CommonPage> {
                     'Pocket Pursuit',
                     style: TextStyle(
                       decoration: TextDecoration.none,
-                      color: Colors.blueGrey[900],
+                      color: Colors.blueGrey[700],
                       fontSize: 28,
                       fontWeight: FontWeight.w900,
                       fontFamily: 'Helvetica',
@@ -115,7 +107,7 @@ class _CommonPage extends State<CommonPage> {
               ],
             ),
             Container(
-              margin: EdgeInsetsDirectional.fromSTEB(30, 25, 0, 0),
+              margin: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
               child: Text(
                 'ITEMS',
                 style: TextStyle(
@@ -180,7 +172,7 @@ class _CommonPage extends State<CommonPage> {
                                                     ScanHome()));
                                       },
                                       child: Text(
-                                        "Go to Scanner",
+                                        "Request Queue",
                                         style: TextStyle(
                                           fontFamily: 'Helveetica',
                                           color: Colors.blueGrey[700],
@@ -211,13 +203,13 @@ class _CommonPage extends State<CommonPage> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   title: Text(
-                                    "Sorry! Occupied",
+                                    "Free To Use",
                                     style: TextStyle(
-                                        color: Colors.red[900],
+                                        color: Colors.greenAccent[700],
                                         fontFamily: 'Helvetica'),
                                   ),
                                   content: Text(
-                                    'The Item are in the authority of  -  Shubham Gupta',
+                                    'Get the authority by scanning from below',
                                     style: TextStyle(
                                         color: Colors.blueGrey,
                                         fontFamily: 'Helvetica'),
@@ -399,7 +391,7 @@ class _CommonPage extends State<CommonPage> {
               ),
             ),
             Container(
-              margin: EdgeInsetsDirectional.fromSTEB(30, 15, 0, 0),
+              margin: EdgeInsetsDirectional.fromSTEB(30, 5, 0, 0),
               child: Text(
                 'PLACES',
                 style: TextStyle(
@@ -415,7 +407,7 @@ class _CommonPage extends State<CommonPage> {
               scrollDirection: Axis.horizontal,
               child: Container(
                 margin:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: FittedBox(
                   fit: BoxFit.fill,
                   alignment: Alignment.topCenter,
@@ -683,41 +675,38 @@ class _CommonPage extends State<CommonPage> {
                 ),
               ),
             ),
-            // Column(
-            //   children: <Widget>[
-            //     const SizedBox(
-            //       height: 10,
-            //     ),
-            //     Expanded(
-            //         child: ListView.builder(
-            //             controller: controller,
-            //             itemCount: itemsData.length,
-            //             physics: BouncingScrollPhysics(),
-            //             itemBuilder: (context, index) {
-            //               double scale = 1.0;
-            //               if (topContainer > 0.5) {
-            //                 scale = index + 0.5 - topContainer;
-            //                 if (scale < 0) {
-            //                   scale = 0;
-            //                 } else if (scale > 1) {
-            //                   scale = 1;
-            //                 }
-            //               }
-            //               return Opacity(
-            //                 opacity: scale,
-            //                 child: Transform(
-            //                   transform: Matrix4.identity()
-            //                     ..scale(scale, scale),
-            //                   alignment: Alignment.bottomCenter,
-            //                   child: Align(
-            //                       heightFactor: 0.7,
-            //                       alignment: Alignment.topCenter,
-            //                       child: itemsData[index]),
-            //                 ),
-            //               );
-            //             })),
-            //   ],
-            // ),
+            Container(
+              margin: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+              child: Text(
+                'LIVE STATUS',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Helvetica',
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                controller: controller,
+                itemCount: itemsData.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  double scale = 1.0;
+                  if (topContainer > 0.5) {
+                    scale = index + 0.5 - topContainer;
+                    if (scale < 0) {
+                      scale = 0;
+                    } else if (scale > 1) {
+                      scale = 1;
+                    }
+                  }
+                  return itemsData[index];
+                }),
           ],
         ),
       ),

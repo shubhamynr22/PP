@@ -1,3 +1,4 @@
+import 'package:PP/screens/newconstants2.dart';
 import 'package:flutter/material.dart';
 import 'package:PP/screens/Personal/Add_item.dart';
 import 'package:PP/screens/Personal/Add_money.dart';
@@ -18,28 +19,68 @@ class Personal extends StatefulWidget {
 }
 
 class _PersonalState extends State<Personal> {
+  ScrollController controller = ScrollController();
+  bool closeTopContainer = false;
+  double topContainer = 0;
+
+  List<Widget> itemsData = [];
+
+  void getPostsData() {
+    List<dynamic> responseList = MONEY_DATA;
+    List<Widget> listItems = [];
+    print(responseList);
+    responseList.forEach((post) {
+      listItems.add(Container(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          height: 50,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(color: Colors.black.withAlpha(40), blurRadius: 10.0),
+              ]),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                post["name"],
+                style:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                post["brand"],
+                style: const TextStyle(fontSize: 13, color: Colors.grey),
+              ),
+            ],
+          )));
+    });
+    setState(() {
+      itemsData = listItems;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getPostsData();
+    controller.addListener(() {
+      double value = controller.offset / 119;
+
+      setState(() {
+        topContainer = value;
+        closeTopContainer = controller.offset > 50;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: myColors[PRIMARY],
-      body: _Body(),
-    );
-  }
-}
-
-class _Body extends StatefulWidget {
-  @override
-  __BodyState createState() => __BodyState();
-}
-
-class __BodyState extends State<_Body> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
       children: [
         SizedBox(
-          height: 40,
+          height: 20,
         ),
         Container(
           padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
@@ -67,15 +108,15 @@ class __BodyState extends State<_Body> {
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(0, 75, 0, 0),
-                  margin: EdgeInsets.only(left: 20.0, right: 10.0, top: 10.0),
-                  height: 140.0,
+                  margin: EdgeInsets.only(left: 20.0, right: 10.0, top: 20.0),
+                  height: 120.0,
                   width: 100.0,
                   decoration: BoxDecoration(
                       color: myColors[WHITE],
                       borderRadius: BorderRadius.circular(15)),
                   child: Column(children: [
                     Text(
-                      'Add Item',
+                      '',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
@@ -97,15 +138,15 @@ class __BodyState extends State<_Body> {
                 },
                 child: Container(
                   padding: EdgeInsets.fromLTRB(0, 75, 0, 0),
-                  margin: EdgeInsets.only(left: 10.0, right: 20.0, top: 10.0),
-                  height: 140.0,
+                  margin: EdgeInsets.only(left: 10.0, right: 20.0, top: 20.0),
+                  height: 120.0,
                   width: 100.0,
                   decoration: BoxDecoration(
                       color: myColors[WHITE],
                       borderRadius: BorderRadius.circular(15)),
                   child: Column(children: [
                     Text(
-                      'Money',
+                      '',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
@@ -119,30 +160,39 @@ class __BodyState extends State<_Body> {
             ),
           ],
         ),
-        Expanded(
-            flex: 5,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-              margin: EdgeInsets.only(
-                  left: 20.0, right: 20.0, top: 22.0, bottom: 22),
-              height: 100.0,
-              width: 375.0,
-              decoration: BoxDecoration(
-                  color: myColors[WHITE],
-                  borderRadius: BorderRadius.circular(15)),
-              child: Column(children: [
-                Text(
-                  'Timeline',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Helvetica',
-                  ),
-                ),
-              ]),
-            )),
+        Container(
+          margin: EdgeInsetsDirectional.fromSTEB(30, 40, 0, 0),
+          child: Text(
+            'LIVE STATUS',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.w300,
+              fontFamily: 'Helvetica',
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        ListView.builder(
+            shrinkWrap: true,
+            controller: controller,
+            itemCount: itemsData.length,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              double scale = 1.0;
+              if (topContainer > 0.5) {
+                scale = index + 0.5 - topContainer;
+                if (scale < 0) {
+                  scale = 0;
+                } else if (scale > 1) {
+                  scale = 1;
+                }
+              }
+              return itemsData[index];
+            }),
       ],
-    );
+    ));
   }
 }

@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 BoxShadow(color: Colors.black.withAlpha(80), blurRadius: 10.0),
               ]),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
             child: Row(
               children: <Widget>[
                 Row(
