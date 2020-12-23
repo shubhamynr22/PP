@@ -7,7 +7,7 @@ class ScanPage extends StatefulWidget {
 }
 
 class _ScanPageState extends State<ScanPage> {
-  String qrCodeResult = "Not Yet Scanned";
+  String qrCodeResult = "Clothing Stand";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,6 +7,13 @@ class Addmoney extends StatefulWidget {
 }
 
 class AddmoneyState extends State<Addmoney> {
+  var _names = [
+    'Select Name',
+    'Shubham Gupta',
+    'Aman Kant',
+    'Saksham Khajuria',
+  ];
+  var currentNameselected = 'Select Name';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +45,60 @@ class AddmoneyState extends State<Addmoney> {
                 ),
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                  child: Text(
+                    "Amount",
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontFamily: 'Helvetica',
+                      fontSize: 22,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                Icon(Icons.arrow_forward),
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
+              child: Text(
+                'Transfer Authority',
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontFamily: 'Helvetica',
+                  fontSize: 22,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+              child: DropdownButton<String>(
+                items: _names.map((String dropDownNameItem) {
+                  return DropdownMenuItem<String>(
+                    child: Text(dropDownNameItem),
+                    value: dropDownNameItem,
+                  );
+                }).toList(),
+                onChanged: (String newNameSelected) {
+                  setState(() {
+                    this.currentNameselected = newNameSelected;
+                  });
+                },
+                value: currentNameselected,
+              ),
+            )
           ],
         ),
       ),

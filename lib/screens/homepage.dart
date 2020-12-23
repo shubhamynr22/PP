@@ -1,4 +1,4 @@
-import 'package:PP/screens/newconstants.dart';
+import 'package:PP/constants/newconstants.dart';
 import 'package:PP/screens/scanner/qrcode.dart';
 import 'package:PP/screens/settings/settings.dart';
 import 'package:PP/services/auth.dart';
@@ -20,7 +20,6 @@ class _CommonPage extends State<CommonPage> {
   void getPostsData() {
     List<dynamic> responseList = FOOD_DATA;
     List<Widget> listItems = [];
-    print(responseList);
     responseList.forEach((post) {
       listItems.add(Container(
           padding: EdgeInsets.symmetric(horizontal: 15),
@@ -69,6 +68,7 @@ class _CommonPage extends State<CommonPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         child: ListView(
           children: <Widget>[
@@ -184,75 +184,14 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                              image: AssetImage('images/chess-board.png')),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15.0))),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  title: Text(
-                                    "Free To Use",
-                                    style: TextStyle(
-                                        color: Colors.greenAccent[700],
-                                        fontFamily: 'Helvetica'),
-                                  ),
-                                  content: Text(
-                                    'Get the authority by scanning from below',
-                                    style: TextStyle(
-                                        color: Colors.blueGrey,
-                                        fontFamily: 'Helvetica'),
-                                  ),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        'Ok',
-                                        style: TextStyle(
-                                          fontFamily: 'Helveetica',
-                                          color: Colors.blueGrey[700],
-                                        ),
-                                      ),
-                                    ),
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            new MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ScanHome()));
-                                      },
-                                      child: Text(
-                                        "Go to Scanner",
-                                        style: TextStyle(
-                                          fontFamily: 'Helveetica',
-                                          color: Colors.blueGrey[700],
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                );
-                              });
-                        },
-                        child: Container(
-                          width: 100,
-                          margin: EdgeInsets.only(right: 15),
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
@@ -312,11 +251,81 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                              image: AssetImage('images/clothes-rack.png')),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  title: Text(
+                                    "Sorry! Occupied",
+                                    style: TextStyle(
+                                        color: Colors.red[900],
+                                        fontFamily: 'Helvetica'),
+                                  ),
+                                  content: Text(
+                                    'The Item are in the authority of  -  Shubham Gupta',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontFamily: 'Helvetica'),
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        'Ok',
+                                        style: TextStyle(
+                                          fontFamily: 'Helveetica',
+                                          color: Colors.blueGrey[700],
+                                        ),
+                                      ),
+                                    ),
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            new MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ScanHome()));
+                                      },
+                                      child: Text(
+                                        "Go to Scanner",
+                                        style: TextStyle(
+                                          fontFamily: 'Helveetica',
+                                          color: Colors.blueGrey[700],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                );
+                              });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                              image: AssetImage('images/badminton (1).png')),
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
@@ -376,11 +385,15 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                            image: AssetImage('images/football.png'),
+                          ),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
@@ -468,11 +481,14 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child:
+                              Image(image: AssetImage('images/volleyball.png')),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
@@ -532,76 +548,14 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                              image: AssetImage('images/washing-machine.png')),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15.0))),
-                          child: Container(),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  title: Text(
-                                    "Sorry! Occupied",
-                                    style: TextStyle(
-                                        color: Colors.red[900],
-                                        fontFamily: 'Helvetica'),
-                                  ),
-                                  content: Text(
-                                    'The Item are in the authority of  -  Shubham Gupta',
-                                    style: TextStyle(
-                                        color: Colors.blueGrey,
-                                        fontFamily: 'Helvetica'),
-                                  ),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        'Ok',
-                                        style: TextStyle(
-                                          fontFamily: 'Helveetica',
-                                          color: Colors.blueGrey[700],
-                                        ),
-                                      ),
-                                    ),
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            new MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ScanHome()));
-                                      },
-                                      child: Text(
-                                        "Go to Scanner",
-                                        style: TextStyle(
-                                          fontFamily: 'Helveetica',
-                                          color: Colors.blueGrey[700],
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                );
-                              });
-                        },
-                        child: Container(
-                          width: 100,
-                          margin: EdgeInsets.only(right: 15),
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
@@ -661,11 +615,82 @@ class _CommonPage extends State<CommonPage> {
                               });
                         },
                         child: Container(
+                          padding: EdgeInsets.all(10),
+                          child:
+                              Image(image: AssetImage('images/badminton.png')),
                           width: 100,
                           margin: EdgeInsets.only(right: 15),
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.blueGrey[700],
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15.0))),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  title: Text(
+                                    "Sorry! Occupied",
+                                    style: TextStyle(
+                                        color: Colors.red[900],
+                                        fontFamily: 'Helvetica'),
+                                  ),
+                                  content: Text(
+                                    'The Item are in the authority of  -  Shubham Gupta',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontFamily: 'Helvetica'),
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        'Ok',
+                                        style: TextStyle(
+                                          fontFamily: 'Helveetica',
+                                          color: Colors.blueGrey[700],
+                                        ),
+                                      ),
+                                    ),
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            new MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ScanHome()));
+                                      },
+                                      child: Text(
+                                        "Go to Scanner",
+                                        style: TextStyle(
+                                          fontFamily: 'Helveetica',
+                                          color: Colors.blueGrey[700],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                );
+                              });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image(
+                            image: AssetImage('images/cricket.png'),
+                          ),
+                          width: 100,
+                          margin: EdgeInsets.only(right: 15),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15.0))),
                         ),
